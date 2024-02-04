@@ -63,22 +63,27 @@ if __name__ == '__main__':
             print(results)
             speak(results)
             start = False
+            
         elif 'open youtube' in query:
             webbrowser.open("https://youtu.be/4xnsmyI5KMQ?feature=shared")
             start = False
+            
         elif 'open' in query:
             l=list(map(str, query.split()))
             web=l[-1]
             webbrowser.open(f"https://www.{web}.com")
             start = False
+            
         elif 'play spotify' in query:
             webbrowser.open("https://open.spotify.com/playlist/4RfCVZ3lLmaHueLCHrisr4?si=fe195bb355ae4d29")
             time.sleep(1)
             pyautogui.press('space')
             start = False
+            
         elif 'time' in query:
             strTime = datetime.datetime.now().strftime("%H:%M:%S")
             speak(f"Sir, the time is {strTime}")
+            
         elif 'email to me' in query:
             try:
                 speak("What should i mail")
@@ -91,8 +96,10 @@ if __name__ == '__main__':
                 error=e
                 speak(f"Failed to send because {error}")
             start = False
+            
         elif 'who are you' in query:
             speak("My name is Nebula an AI personal assistant ,I can send mails ,play music and i can search for websites and information in wikipedia")
+            
         elif 'whatsapp' in query:
             #speak("what should i tell")
             #msg = takecommand()
